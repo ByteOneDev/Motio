@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ui-bg: #0b0c10;
+  --color-ui-panel: #14161c;
+  --color-ui-raised: #1c1f27;
+  --color-ui-hover: #242833;
+  --color-ui-line: #262a33;
+  --color-ui-text: #e6e8ee;
+  --color-ui-muted: #8a90a0;
+  --color-ui-faint: #5a6070;
+  --color-accent: #7c5cff;
+  --color-accent-soft: #7c5cff33;
+  --color-guide: #ff4d8d;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ui-bg);
+  color: var(--color-ui-text);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
+}
+
+input,
+textarea,
+select {
+  user-select: text;
+}
+
+/* Champs numériques sans flèches natives : on incrémente au glisser ou aux flèches du clavier. */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ui-line);
+  border-radius: 4px;
+}

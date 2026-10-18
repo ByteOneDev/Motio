@@ -1,0 +1,32 @@
+# Empaquetage de l'application de bureau (npm run dist).
+appId: app.motio.desktop
+productName: Motio
+copyright: Motio
+directories:
+  buildResources: build
+  output: dist
+# Le code est entièrement compilé dans out/ par electron-vite.
+files:
+  - out/**/*
+  - package.json
+# Réutilise le binaire Electron déjà installé au lieu de le retélécharger.
+electronDist: node_modules/electron/dist
+mac:
+  target:
+    - target: dmg
+      arch: [arm64]
+  icon: build/icon.icns
+  category: public.app-category.video
+  # Application non signée : pour un usage personnel. Une signature Apple sera nécessaire pour la distribuer.
+  identity: null
+  hardenedRuntime: false
+  extendInfo:
+    NSHighResolutionCapable: true
+    NSMicrophoneUsageDescription: Motio utilise le micro pour enregistrer votre voix off.
+  fileAssociations:
+    - ext: motio
+      name: Projet Motio
+      role: Editor
+      icon: build/icon.icns
+dmg:
+  title: Motio
