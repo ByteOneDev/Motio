@@ -48,7 +48,7 @@
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3",
     "vite": "7.3.7",
-    "vitest": "4.1.11",
+    "vitest": "4.1.12",
     "zod": "4.6.5",
     "zustand": "5.0.15"
   },
